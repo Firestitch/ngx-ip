@@ -16,6 +16,8 @@ export class FsIpComponent {
   @Input() public country: string;
   @Input() public region: string;
   @Input() public ip: string;
+  @Input() public lat: string;
+  @Input() public lng: string;
 
 
 }

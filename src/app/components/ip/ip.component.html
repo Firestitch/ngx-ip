@@ -1,5 +1,11 @@
 
 <div class="ip">{{ip}}</div>
 <small>
-  <fs-country [code]="country" [region]="region"></fs-country>
+  <a *ngIf="lat && lng; else countryTmpl" [href]="'https://www.google.com/maps/search/?api=1&query=' + lat + '%2C' + lng" target="_blank">
+    <ng-container *ngTemplateOutlet="countryTmpl"></ng-container>
+  </a>
 </small>
+
+<ng-template #countryTmpl>
+  <fs-country [code]="country" [region]="region"></fs-country>
+</ng-template>

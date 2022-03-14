@@ -16,7 +16,9 @@ export class IpComponent implements OnInit {
     this.ip = {
       country: 'CA',
       region: 'Ontario',
-      ip: '122.32.21.221'
+      ip: '122.32.21.221',
+      lat: 43.7183438,
+      lng: -79.4482689
     };
   }
 
