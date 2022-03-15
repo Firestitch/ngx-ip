@@ -18,6 +18,6 @@ export class FsIpComponent {
   @Input() public ip: string;
   @Input() public lat: string;
   @Input() public lng: string;
-
+  @Input() public showIp = true;
 
 }
