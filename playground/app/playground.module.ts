@@ -1,30 +1,28 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, Routes } from '@angular/router';
 
 import { FsExampleModule } from '@firestitch/example';
-import { FsMessageModule } from '@firestitch/message';
 import { FsIpModule } from '@firestitch/ip';
 import { FsLabelModule } from '@firestitch/label';
+import { FsMessageModule } from '@firestitch/message';
 import { FsStoreModule } from '@firestitch/store';
 
-import { ToastrModule } from 'ngx-toastr';
-
-import { AppMaterialModule } from './material.module';
+import { AppComponent } from './app.component';
 import {
   ExamplesComponent
 } from './components';
-import { AppComponent } from './app.component';
 import { IpComponent } from './components/ip';
+import { AppMaterialModule } from './material.module';
 
 const routes: Routes = [
   { path: '', component: ExamplesComponent },
 ];
 
 @NgModule({
-  bootstrap: [ AppComponent ],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     FsIpModule,
@@ -35,7 +33,6 @@ const routes: Routes = [
     FsStoreModule,
     FsExampleModule.forRoot(),
     FsMessageModule.forRoot(),
-    ToastrModule.forRoot({ preventDuplicates: true }),
     RouterModule.forRoot(routes),
   ],
   declarations: [
