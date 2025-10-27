@@ -1,14 +1,25 @@
 
-<div class="ip" *ngIf="showIp">{{ip}}</div>
+@if (showIp) {
+  <div class="ip">{{ip}}</div>
+}
 <small>
-  <a *ngIf="lat && lng; else countryTmpl" [href]="'https://www.google.com/maps/search/?api=1&query=' + lat + '%2C' + lng" target="_blank">
-    <ng-container *ngTemplateOutlet="countryTmpl"></ng-container>
-  </a>
+  @if (lat && lng) {
+    <a [href]="'https://www.google.com/maps/search/?api=1&query=' + lat + '%2C' + lng" target="_blank">
+      <ng-container *ngTemplateOutlet="countryTmpl"></ng-container>
+    </a>
+  } @else {
+    <fs-country
+      [code]="country"
+      [region]="region"
+      [matTooltip]="ip"
+      [matTooltipDisabled]="showIp">
+    </fs-country>
+  }
 </small>
 
 <ng-template #countryTmpl>
-  <fs-country 
-    [code]="country" 
+  <fs-country
+    [code]="country"
     [region]="region"
     [matTooltip]="ip"
     [matTooltipDisabled]="showIp">
