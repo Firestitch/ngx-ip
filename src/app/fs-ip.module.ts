@@ -7,19 +7,15 @@ import { FsIpComponent } from './components/ip/ip.component';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    
-    MatTooltipModule,
-
-    FsCountryModule,
-  ],
-  exports: [
-    FsIpComponent,
-  ],
-  declarations: [
-    FsIpComponent,
-  ],
+    imports: [
+        CommonModule,
+        MatTooltipModule,
+        FsCountryModule,
+        FsIpComponent,
+    ],
+    exports: [
+        FsIpComponent,
+    ],
 })
 export class FsIpModule {
   static forRoot(): ModuleWithProviders<FsIpModule> {

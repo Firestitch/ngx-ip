@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { FsIpComponent } from '../../../../src/app/components/ip/ip.component';
 
 
 @Component({
-  selector: 'app-ip',
-  templateUrl: './ip.component.html',
-  styleUrls: ['./ip.component.scss']
+    selector: 'app-ip',
+    templateUrl: './ip.component.html',
+    styleUrls: ['./ip.component.scss'],
+    standalone: true,
+    imports: [FsIpComponent]
 })
 export class IpComponent implements OnInit {
 

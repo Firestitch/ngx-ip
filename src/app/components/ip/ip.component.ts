@@ -3,13 +3,22 @@ import {
   Input,
   ChangeDetectionStrategy,
 } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
+import { FsCountryModule } from '@firestitch/country';
+import { MatTooltip } from '@angular/material/tooltip';
 
 
 @Component({
-  selector: 'fs-ip',
-  templateUrl: './ip.component.html',
-  styleUrls: [ './ip.component.scss' ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'fs-ip',
+    templateUrl: './ip.component.html',
+    styleUrls: ['./ip.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [
+        NgTemplateOutlet,
+        FsCountryModule,
+        MatTooltip,
+    ],
 })
 export class FsIpComponent {
 
